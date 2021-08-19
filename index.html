@@ -32,6 +32,26 @@
             font-weight: 400;
             margin: 3rem 0;
         }
+ span{
+            font-size: 10rem;
+            background: linear-gradient(90deg, red, blue, green, black);
+            background-size: 400%;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation:animate 10s linear infinite;
+        }
+
+
+        @keyframes animate {
+            from{
+                background-position: 0%;
+            }
+            to{
+                background-position: 400%;
+            }
+        }
+        
+        
         a{
             color: #333;
             text-decoration: none;
