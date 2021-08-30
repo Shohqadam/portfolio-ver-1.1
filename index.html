@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ergashev Shohqadam Portfolio | v-2</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
-        *{
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400&family=Josefin+Slab:wght@100&family=Ubuntu:wght@300&display=swap');
+ *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -23,8 +24,8 @@
             display: grid;
             place-items: center;
             margin: 8rem 0;
-            cursor: url('iconmonstr-cursor-6.svg'), auto;
         }
+
         span{
             font-weight: 600;
         }
@@ -33,7 +34,7 @@
             margin: 3rem 0;
         }
  span{
-            font-size: 3rem;
+            font-size: 4rem;
            	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
             background-size: 400% 400%;
             -webkit-text-fill-color: transparent;
@@ -82,10 +83,78 @@
         a:hover .fa-linkedin{
             color:  #2867B2;
         }
+
+
+/* loader */
+.loader{
+            background: #fff;
+            width: 100%;
+            height: 70vh;
+            position: absolute;
+            display: grid;
+            place-items:center
+}
+        /* .titles{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        } */
+        .loader__title{
+            font-weight: 500;
+            font-size: 240px;
+            font-family: 'Josefin Slab';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .loader.hidden{
+            opacity: 0;
+            visibility: none;
+        }
+
+        /* end loader */
+.main.mainHidden{
+    display: none;
+}
+
+
+        
+        @media screen and (max-width:768px){
+            body{
+                font-size: 2rem;
+            }
+            span{
+                font-size: 2rem;
+            }
+            .loader__title{
+                font-size: 100px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
+
+<!-- loader -->
+
+    <div class="loader">
+                <div class="titles">
+                    <div class="title title-1">
+                        <h1 class="loader__title">Make</h1>
+                    </div>
+                    <div class="title title-2">
+                        <h1 class="loader__title">A</h1>
+                    </div>
+                    <div class="title title-3">
+                        <h1 class="loader__title">Diffrence</h1>
+                    </div>
+            </div>
+    </div>
+
+<!-- end loader -->
+
+    <div class="main mainHidden">
         <p>
         hello. i'm Shohqadam 16 years old junior developer from Uzbekistan.
              i am a creative frontend programmer based on animations.
@@ -98,24 +167,65 @@
                     Sass, Bootstrap, Vuetify, Git
                 </span>  
              technologies
-        </h1>s
+        </h1>
         <h3>Works</h3>
         </p>
         <p>
             I do not currently have any formal activities and qualifications 
             but I am looking for a job as an <span>intern</span> . you can see my work via 
-        <span>GitHub</span>    </h1>
+        <span><a href="http://github.com/Shohqadam">GitHub</a> </span>    </h1>
        </p>
             <h3>Socials</h3>
 
         <ul class="socials">
             <li><a target="_blank" href="https://www.instagram.com/ergashev_shohqadam/?hl=ru"><i class="fab fa-instagram"></i>instagram</a></li>
-            <li><a target="_blank" href="gttp://hithub.com/Shohqadam"><i class="fab fa-github"></i>github</a></li>
+            <li><a target="_blank" href="http://github.com/Shohqadam"><i class="fab fa-github"></i>github</a></li>
             <li><a target="_blank" href="http://t.me/ergashevshohqadam"><i class="fab fa-telegram"></i>telegram</a></li>
             <li><a target="_blank" href="http://twitter.com/ShohqadamE?s=09"><i class="fab fa-twitter"></i>twitter</a></li>
             <li><a target="_blank" href="https://www.youtube.com/channel/UCYTjtpq8MoYmlIFrGE1wf3w"><i class="fab fa-youtube"></i>youtube</a></li>
             <li><a target="_blank" href="http://www.linkedin.com/in/shohqadam-ergashev-451232203"><i class="fab fa-linkedin"></i>linkedin</a></li>
         </ul>
     </div>
+
+
+    
+    <script>
+
+        TweenMax.staggerFrom('.titles > div',
+                                             0.8,
+
+                                            {
+                                                x: '-40',
+                                                ease: Power3.EaseInOut,
+                                                opacity: '0'
+                                            }, 2);
+
+
+    TweenMax.staggerTo('.titles > div',
+                                             0.8,
+
+                                            {
+                                                x: '-60',
+                                                ease: Power3.EaseInOut,
+                                                delay: 1.2,
+                                                opacity: '0'
+                                            }, 2);    
+
+    </script>
+
+    <script>
+        setTimeout(
+        function addHidden(){
+            loader.classList.add('hidden')
+            main.classList.remove('mainHidden')
+        }, 7000)
+
+
+         const loader = document.querySelector('.loader')
+         const main = document.querySelector('.main')
+         window.addEventListener('load',addHidden)
+
+        
+    </script>
 </body>
 </html>
