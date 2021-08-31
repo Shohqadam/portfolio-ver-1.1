@@ -20,7 +20,7 @@
             font-family: 'Cairo';
             font-weight: 200;
             font-size: 4rem;
-            width: 80%;
+            width: 100%;
             display: grid;
             place-items: center;
             margin: 8rem 0;
@@ -120,6 +120,27 @@
 }
 
 
+        .portret{
+            width: 300px;
+            height: 300px;
+            position: relative;
+            top: 200px;
+            left: 300px;
+            background:#111;
+            transition:.5s ease all;
+        }
+        .portret-bg{
+            width: 120%;
+            height: 120%;
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            background-image: url(q-removebg-preview.png);
+            background-size: cover;
+            background-position: center;
+            transition:.5s ease all;
+        }
+
         
         @media screen and (max-width:768px){
             body{
@@ -132,6 +153,15 @@
                 font-size: 100px;
             }
         }
+
+        .poo{
+            display: flex;
+        }
+                /* li,ul.socials{
+            display: block;
+            width: 30%;
+        } */
+
     </style>
 </head>
 <body>
@@ -156,8 +186,8 @@
 
     <div class="main mainHidden">
         <p>
-        hello. i'm Shohqadam 16 years old junior developer from Uzbekistan.
-             i am a creative frontend programmer based on animations.
+        hello. i'm Shohqadam 16 years old junior frontend developer from Uzbekistan.
+             i am a creative developer based on animations.
              i currently have the ability to work fluently with 
                 <span>
                     HTML5, CSS3, JavaScript, VueJs
@@ -176,7 +206,7 @@
         <span><a href="http://github.com/Shohqadam">GitHub</a> </span>    </h1>
        </p>
             <h3>Socials</h3>
-
+<div class="poo">
         <ul class="socials">
             <li><a target="_blank" href="https://www.instagram.com/ergashev_shohqadam/?hl=ru"><i class="fab fa-instagram"></i>instagram</a></li>
             <li><a target="_blank" href="http://github.com/Shohqadam"><i class="fab fa-github"></i>github</a></li>
@@ -185,10 +215,19 @@
             <li><a target="_blank" href="https://www.youtube.com/channel/UCYTjtpq8MoYmlIFrGE1wf3w"><i class="fab fa-youtube"></i>youtube</a></li>
             <li><a target="_blank" href="http://www.linkedin.com/in/shohqadam-ergashev-451232203"><i class="fab fa-linkedin"></i>linkedin</a></li>
         </ul>
+
+
+    <div class="portret">
+      <div class="portret-bg"></div>
     </div>
+    </div>
+</div>
 
-
-    
+        <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
     <script>
 
         TweenMax.staggerFrom('.titles > div',
@@ -226,6 +265,28 @@
          window.addEventListener('load',addHidden)
 
         
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+       let windowWidth = $('.portret').width()
+
+       $('.portret').mousemove(function(event){
+           var mouseX = (($('.portret').width() / 2) - event.pageX) * 0.02
+           var mouseY = (($('.portret').height() / 2) - event.pageY) * 0.02
+
+           $('.portret-bg').css('margin-left', mouseX + 'px')
+           $('.portret-bg').css('margin-top', mouseY + 'px')
+       })
+       $('.portret').mouseout(function(event){
+
+            $('.portret-bg').css('margin-left', 0 + 'px')
+           $('.portret-bg').css('margin-top', 0 + 'px')
+           $('.portret-bg').css('margin-right', 0 + 'px')
+           $('.portret-bg').css('margin-bottom', 0 + 'px')
+
+       })
     </script>
 </body>
 </html>
