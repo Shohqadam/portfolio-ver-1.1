@@ -1,265 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ergashev Shohqadam Portfolio | v-2</title>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"
+      integrity="sha512-DkPsH9LzNzZaZjCszwKrooKwgjArJDiEjA5tTgr3YX4E6TYv93ICS8T41yFHJnnSmGpnf0Mvb5NhScYbwvhn2w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400&family=Josefin+Slab:wght@100&family=Ubuntu:wght@300&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Cairo";
+        font-weight: 200;
+        font-size: 4rem;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        margin: 4rem 0 4rem 1rem;
+      }
 
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;400&family=Josefin+Slab:wght@100&family=Ubuntu:wght@300&display=swap');
- *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            font-family: 'Cairo';
-            font-weight: 200;
-            font-size: 4rem;
-            width: 100%;
-            display: grid;
-            place-items: center;
-            margin: 4rem 0 4rem 1rem;
-		
-        }
+      span {
+        font-weight: 600;
+      }
+      h3 {
+        font-weight: 400;
+        margin: 3rem 0;
+      }
+      span {
+        font-size: 4rem;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        animation: gradient 15s ease infinite;
+      }
 
-        span{
-            font-weight: 600;
+      @keyframes gradient {
+        0% {
+          background-position: 0% 50%;
         }
-        h3{
-            font-weight: 400;
-            margin: 3rem 0;
+        50% {
+          background-position: 100% 50%;
         }
- span{
-            font-size: 4rem;
-           	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-            background-size: 400% 400%;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            animation:gradient 15s ease infinite;
+        100% {
+          background-position: 0% 50%;
         }
+      }
 
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+      i {
+        margin: 0 40px;
+      }
 
-        @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+      a:hover .fa-instagram {
+        color: #cc2366;
+      }
+      a:hover .fa-github {
+        color: #4078c0;
+      }
+      a:hover .fa-telegram {
+        color: #0077aa;
+      }
+      a:hover .fa-twitter {
+        color: #1da1f2;
+      }
+      a:hover .fa-youtube {
+        color: #c4302b;
+      }
+      a:hover .fa-linkedin {
+        color: #2867b2;
+      }
 
-        
-        
-        a{
-            color: #333;
-            text-decoration: none;
-        }
-        i{
-            margin: 0 40px;
-        }
-
-        a:hover .fa-instagram{
-            color: #cc2366;
-        }
-        a:hover .fa-github{
-            color: #4078c0;
-        }
-        a:hover .fa-telegram{
-            color: #0077aa;
-        }
-        a:hover .fa-twitter{
-            color: #1DA1F2;
-        }
-        a:hover .fa-youtube{
-            color:  #c4302b;
-        }
-        a:hover .fa-linkedin{
-            color:  #2867B2;
-        }
-
-
-/* loader */
-.loader{
-            background: #fff;
-            width: 100%;
-            height: 70vh;
-            position: absolute;
-            display: grid;
-            place-items:center
-}
-        /* .titles{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        } */
-        .loader__title{
-            font-weight: 500;
-            font-size: 240px;
-            font-family: 'Josefin Slab';
+      /* loader */
+      .loader {
+        background: #fff;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .titles{
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .loader.hidden{
-            opacity: 0;
-            visibility: none;
+      .loader__title {
+        font-weight: 500;
+        font-size: 240px;
+        font-family: "Josefin Slab";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .loader.hidden {
+        opacity: 0;
+        visibility: none;
+      }
+
+      /* end loader */
+      .main.mainHidden {
+        display: none;
+      }
+
+
+      @media (max-width: 768px) {
+        body {
+          font-size: 2rem;
         }
-
-        /* end loader */
-.main.mainHidden{
-    display: none;
-}
-
-
-        .portret{
-            width: 300px;
-            height: 300px;
-            position: relative;
-            top: 200px;
-            left: 300px;
-            background:#111;
-            transition:.5s ease all;
+        span {
+          font-size: 2rem;
         }
-        .portret-bg{
-            width: 120%;
-            height: 120%;
-            position: absolute;
-            top: -10%;
-            left: -10%;
-            background-image: url(q-removebg-preview.png);
-            background-size: cover;
-            background-position: center;
-            transition:.5s ease all;
+        .loader__title {
+          font-size: 100px;
         }
+      }
+      .portret {
+        display: none;
+      }
 
-        
-        @media  (max-width:768px){
-            body{
-                font-size: 2rem;
-            }
-            span{
-                font-size: 2rem;
-            }
-            .loader__title{
-                font-size: 100px;
-            }
-        }
-	.portret{
-	    display:none
-	   }
-
-                /* li,ul.socials{
+      /* li,ul.socials{
             display: block;
             width: 30%;
         } */
-
     </style>
-</head>
-<body>
-
-<!-- loader -->
+  </head>
+  <body>
+    <!-- loader -->
 
     <div class="loader">
-                <div class="titles">
-                    <div class="title title-1">
-                        <h1 class="loader__title">Make</h1>
-                    </div>
-                    <div class="title title-2">
-                        <h1 class="loader__title">A</h1>
-                    </div>
-                    <div class="title title-3">
-                        <h1 class="loader__title">Diffrence</h1>
-                    </div>
-            </div>
+      <div class="titles">
+        <div class="title title-1">
+          <h1 class="loader__title">Make</h1>
+        </div>
+        <div class="title title-2">
+          <h1 class="loader__title">A</h1>
+        </div>
+        <div class="title title-3">
+          <h1 class="loader__title">Diffrence</h1>
+        </div>
+      </div>
     </div>
 
-<!-- end loader -->
+    <!-- end loader -->
 
     <div class="main mainHidden">
-        <p>
-        hello. i'm Shohqadam 16 years old junior frontend developer from Uzbekistan.
-             i am a creative developer based on animations.
-             i currently have the ability to work fluently with 
-                <span>
-                    HTML5, CSS3, JavaScript, VueJs
-                </span>     
-             and in addition 
-                <span>
-                    Sass, Bootstrap, Vuetify, Git
-                </span>  
-             technologies
+      <p>
+        hello. i'm Shohqadam 16 years old junior frontend developer from
+        Uzbekistan. i am a creative developer based on animations. i currently
+        have the ability to work fluently with
+        <span> HTML5, CSS3, JavaScript, VueJs </span>
+        and in addition
+        <span> Sass, Bootstrap, Vuetify, Git </span>
+        technologies
       </p>
-        <h3>Works</h3>
-      
-        <p> 
- <a href="https://shohqadam.github.io/todolists/">TodoLists</a>    
-       </p>
-	    <p><a href=" https://shohqadam.github.io/generateRandomUser/">generateRandomUser</a>  </p>
-            <h3>Socials</h3>
+<!--  WORKS   -->
+      <h3>Works</h3>
 
-        <ul class="socials">
-            <li><a target="_blank" href="https://www.instagram.com/ergashev_shohqadam/?hl=ru"><i class="fab fa-instagram"></i>instagram</a></li>
-            <li><a target="_blank" href="http://github.com/Shohqadam"><i class="fab fa-github"></i>github</a></li>
-            <li><a target="_blank" href="http://t.me/ergashevshohqadam"><i class="fab fa-telegram"></i>telegram</a></li>
-            <li><a target="_blank" href="http://twitter.com/ShohqadamE?s=09"><i class="fab fa-twitter"></i>twitter</a></li>
-            <li><a target="_blank" href="https://www.youtube.com/channel/UCYTjtpq8MoYmlIFrGE1wf3w"><i class="fab fa-youtube"></i>youtube</a></li>
-            <li><a target="_blank" href="http://www.linkedin.com/in/shohqadam-ergashev-451232203"><i class="fab fa-linkedin"></i>linkedin</a></li>
-    </ul>
+      <p>
+        <a target="_blank" href="https://shohqadam.github.io/todolists/">TodoLists</a>
+      </p>
+      <p>
+        <a target="_blank" href="https://shohqadam.github.io/generateRandomUser/">generateRandomUser</a>
+      </p>
 
-</div>
+      <p>
+        <a target="_blank" href="https://shohqadam.github.io/qrCodegenerate">generateQRcode</a>
+      </p>
 
-        <script
+      <p>
+        <a target="_blank" href="https://shohqadam.github.io/mysicPlayer">musicPlayer</a>
+      </p>
+
+
+<!--  END WORKS  -->
+
+
+
+<h3>Socials</h3>
+
+      <ul class="socials">
+        <li>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/ergashev_shohqadam/?hl=ru"
+            ><i class="fab fa-instagram"></i>instagram</a
+          >
+        </li>
+        <li>
+          <a target="_blank" href="http://github.com/Shohqadam"
+            ><i class="fab fa-github"></i>github</a
+          >
+        </li>
+        <li>
+          <a target="_blank" href="http://t.me/ergashevshohqadam"
+            ><i class="fab fa-telegram"></i>telegram</a
+          >
+        </li>
+        <li>
+          <a target="_blank" href="http://twitter.com/ShohqadamE?s=09"
+            ><i class="fab fa-twitter"></i>twitter</a
+          >
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://www.youtube.com/channel/UCYTjtpq8MoYmlIFrGE1wf3w"
+            ><i class="fab fa-youtube"></i>youtube</a
+          >
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="http://www.linkedin.com/in/shohqadam-ergashev-451232203"
+            ><i class="fab fa-linkedin"></i>linkedin</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
       crossorigin="anonymous"
     ></script>
     <script>
+      TweenMax.staggerFrom(
+        ".titles > div",
+        0.8,
 
-        TweenMax.staggerFrom('.titles > div',
-                                             0.8,
+        {
+          x: "-40",
+          ease: Power3.EaseInOut,
+          opacity: "0",
+        },
+        2
+      );
 
-                                            {
-                                                x: '-40',
-                                                ease: Power3.EaseInOut,
-                                                opacity: '0'
-                                            }, 2);
+      TweenMax.staggerTo(
+        ".titles > div",
+        0.8,
 
-
-    TweenMax.staggerTo('.titles > div',
-                                             0.8,
-
-                                            {
-                                                x: '-60',
-                                                ease: Power3.EaseInOut,
-                                                delay: 1.2,
-                                                opacity: '0'
-                                            }, 2);    
-
+        {
+          x: "-60",
+          ease: Power3.EaseInOut,
+          delay: 1.2,
+          opacity: "0",
+        },
+        2
+      );
     </script>
 
     <script>
-        setTimeout(
-        function addHidden(){
-            loader.classList.add('hidden')
-            main.classList.remove('mainHidden')
-        }, 7000)
+      setTimeout(function addHidden() {
+        loader.classList.add("hidden");
+        main.classList.remove("mainHidden");
+      }, 7000);
 
-
-         const loader = document.querySelector('.loader')
-         const main = document.querySelector('.main')
-         window.addEventListener('load',addHidden)
-
-        
-	</script>
-</body>
+      const loader = document.querySelector(".loader");
+      const main = document.querySelector(".main");
+      window.addEventListener("load", addHidden);
+    </script>
+  </body>
 </html>
